@@ -1,0 +1,12 @@
+item,2022-09-27,2021-09-26
+ NetIncomeLoss =                                    ,0.00,0.00
+ + IncomeLossFromContinuingOperationsBefore... =     ,0.00,0.00
+   + OperatingIncomeLoss =                          ,0.00,0.00
+     + GrossProfit =                                 ,0.00,0.00
+       + SalesRevenueNet                         ,0.00,0.00
+       - CostOfGoodsAndServicesSold                ,0.00,0.00
+     - OperatingExpenses =                        ,0.00,0.00
+       + ResearchAndDevelopmentExpense              ,0.00,0.00
+       + SellingGeneralAndAdministrativeExpense    ,0.00,0.00
+   + NonoperatingIncomeExpense                       ,0.00,0.00
+ - IncomeTaxExpenseBenefit          ,0.00,0.00
