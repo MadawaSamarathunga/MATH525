@@ -55,26 +55,6 @@ options(HTTPUserAgent = "name_surname   name_surname@domain.com")
 ### commands for EDGAR database (USA companies only)
 
 
-# get company info 
-
-CompanyInfo("AAPL")
-
-
-
-
-# get statements from the database
-
-aapl.1314 <- GetFinStats(symbol='AAPL', years=2013:2015)
-
-
-
-
-# get statements saved previously
-
-load(file = 'apple_1314.R')   
-
-
-
 
 # split statements in 3 objects respectively with: both, bs only and is only statements
 
@@ -87,35 +67,55 @@ aapl.1314.is <- aapl.1314$isfy
 
 
 
-# check statements
+# check statements bnm
 
-check_statement(aapl.1314.bs)
+check_statement(bnm_bs)
 
-check_statement(aapl.1314.is)
+check_statement(bnm_is)
 
+#check statements frasers
 
+check_statement(frasers_bs)
 
-
-# plots for simplified bs and full is statements
-
-aapl.1314.bss <- simplify.bs(aapl.1314.bs)
-
-plot.bsf(bsf=aapl.1314.bss)
-
-plot.isf(isf=aapl.1314.is, dates=c(1,2))
+check_statement(frasers_is)
 
 
+# plots for simplified bs and full is statements bnm
+
+bnm_bss <- simplify.bs(bnm_bs)
+
+plot.bsf(bsf=bnm_bss)
+
+plot.isf(isf=bnm_is, dates=c(1,2))
+
+# plots for simplified bs and full is statements frasers
+
+frasers_bss <- simplify.bs(frasers_bs)
+
+plot.bsf(bsf=frasers_bss)
+
+plot.isf(isf=frasers_is, dates=c(1,2))
 
 
-# horizontal and vertical analyses for bs and is statements
+# horizontal and vertical analyses for bs and is statements bns
 
-horizonal.analysis(fs=aapl.1314.bs, type='bs', units = 1000000)
+horizonal.analysis(fs=bnm_bs, type='bs', units = 1000000)
 
-vertical.analysis(fs=aapl.1314.bs, type = 'bs', total = NULL)
+vertical.analysis(fs=bnm_bs, type = 'bs', total = NULL)
 
-horizonal.analysis(fs=aapl.1314.is, type='is', units = 1000000)
+horizonal.analysis(fs=bnm_is, type='is', units = 1000000)
 
-vertical.analysis(fs=aapl.1314.is, type = 'is', total = NULL)
+vertical.analysis(fs=bnm_is, type = 'is', total = NULL)
+
+# horizontal and vertical analyses for bs and is statements frasers
+
+horizonal.analysis(fs=frasers_bs, type='bs', units = 1000000)
+
+vertical.analysis(fs=frasers_bs, type = 'bs', total = NULL)
+
+horizonal.analysis(fs=frasers_is, type='is', units = 1000000)
+
+vertical.analysis(fs=frasers_is, type = 'is', total = NULL)
 
 
 
@@ -138,14 +138,14 @@ plot(aapl.1314.ratios[,1:3], main='',type='b')
 
 # create bs and is statements in R for the two companies (e.g. xxxx and yyyy)
 
-xxxx.bs = make.statement(template='xxxx-bs_template.csv', skeleton="bs_skeleton.R", digits = 2) 
+bnm_bs = make.statement(template='bnm_bs.csv', skeleton="bs_skeleton.R", digits = 2) 
 
-xxxx.is = make.statement(template='xxxx-is_template.csv', skeleton="is_skeleton.R", digits = 2) 
+bnm_is = make.statement(template='bnm_is.csv', skeleton="is_skeleton.R", digits = 2) 
 
 
-yyyy.bs = make.statement(template='yyyy-bs_template.csv', skeleton="bs_skeleton.R", digits = 2) 
+frasers_bs = make.statement(template='frasers_bs.csv', skeleton="bs_skeleton.R", digits = 2) 
 
-yyyy.is = make.statement(template='yyyy-is_template.csv', skeleton="is_skeleton.R", digits = 2) 
+frasers_is = make.statement(template='frasers_is.csv', skeleton="is_skeleton.R", digits = 2) 
 
 
 
